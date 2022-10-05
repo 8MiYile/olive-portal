@@ -2,7 +2,7 @@ import request from '@/config/axios'
 import type { TableData } from './types'
 
 export const getTableListApi = (params: any): Promise<IResponse> => {
-  return request.get({ url: '/example/list', params })
+  return request.get({ url: '/shows/:pageIndex/:pageSize', params })
 }
 
 export const saveTableApi = (data: Partial<TableData>): Promise<IResponse> => {

@@ -30,9 +30,9 @@ const { t } = useI18n()
 
 const crudSchemas = reactive<CrudSchema[]>([
   {
-    field: 'index',
-    label: t('tableDemo.index'),
-    type: 'index',
+    field: 'show_id',
+    label: t('tableDemo.showID'),
+    type: 'show_id',
     form: {
       show: false
     },
@@ -41,8 +41,8 @@ const crudSchemas = reactive<CrudSchema[]>([
     }
   },
   {
-    field: 'title',
-    label: t('tableDemo.title'),
+    field: 'streamer_name',
+    label: t('tableDemo.streamerName'),
     search: {
       show: true
     },
@@ -56,12 +56,122 @@ const crudSchemas = reactive<CrudSchema[]>([
     }
   },
   {
-    field: 'author',
-    label: t('tableDemo.author')
+    field: 'platform',
+    label: t('tableDemo.platform'),
+    form: {
+      colProps: {
+        span: 24
+      }
+    },
+    detail: {
+      span: 24
+    }
   },
   {
-    field: 'display_time',
-    label: t('tableDemo.displayTime'),
+    field: 'room_id',
+    label: t('tableDemo.roomID'),
+    form: {
+      colProps: {
+        span: 24
+      }
+    },
+    detail: {
+      span: 24
+    }
+  },
+  {
+    field: 'out_tmpl',
+    label: t('tableDemo.outTmpl'),
+    type: 'out_tmpl',
+    table: {
+      show: false
+    },
+    form: {
+      colProps: {
+        span: 24
+      }
+    },
+    detail: {
+      span: 24
+    }
+  },
+  {
+    field: 'parser',
+    label: t('tableDemo.parser'),
+    type: 'parser',
+    table: {
+      show: false
+    },
+    form: {
+      colProps: {
+        span: 24
+      }
+    },
+    detail: {
+      span: 24
+    }
+  },
+  {
+    field: 'save_dir',
+    label: t('tableDemo.saveDir'),
+    type: 'save_dir',
+    table: {
+      show: false
+    },
+    form: {
+      colProps: {
+        span: 24
+      }
+    },
+    detail: {
+      span: 24
+    }
+  },
+  {
+    field: 'post_cmds',
+    label: t('tableDemo.postCmds'),
+    type: 'post_cmds',
+    table: {
+      show: false
+    },
+    form: {
+      component: 'Input',
+      componentProps: {
+        type: 'textarea',
+        rows: 1
+      },
+      colProps: {
+        span: 24
+      }
+    },
+    detail: {
+      span: 24
+    }
+  },
+  {
+    field: 'split_rule',
+    label: t('tableDemo.splitRule'),
+    type: 'split_rule',
+    table: {
+      show: false
+    },
+    form: {
+      component: 'Input',
+      componentProps: {
+        type: 'textarea',
+        rows: 1
+      },
+      colProps: {
+        span: 24
+      }
+    },
+    detail: {
+      span: 24
+    }
+  },
+  {
+    field: 'date_created',
+    label: t('tableDemo.dateCreated'),
     form: {
       component: 'DatePicker',
       componentProps: {
@@ -71,20 +181,26 @@ const crudSchemas = reactive<CrudSchema[]>([
     }
   },
   {
-    field: 'importance',
-    label: t('tableDemo.importance'),
-    formatter: (_: Recordable, __: TableColumn, cellValue: number) => {
+    field: 'date_updated',
+    label: t('tableDemo.dateUpdated'),
+    form: {
+      component: 'DatePicker',
+      componentProps: {
+        type: 'datetime',
+        valueFormat: 'YYYY-MM-DD HH:mm:ss'
+      }
+    }
+  },
+  {
+    field: 'enable',
+    label: t('tableDemo.enable'),
+    formatter: (_: Recordable, __: TableColumn, cellValue: boolean) => {
       return h(
         ElTag,
         {
-          type: cellValue === 1 ? 'success' : cellValue === 2 ? 'warning' : 'danger'
+          type: cellValue === true ? 'success' : 'warning'
         },
-        () =>
-          cellValue === 1
-            ? t('tableDemo.important')
-            : cellValue === 2
-            ? t('tableDemo.good')
-            : t('tableDemo.commonly')
+        () => (cellValue === true ? t('tableDemo.enableOn') : t('tableDemo.enableOff'))
       )
     },
     form: {
@@ -95,43 +211,15 @@ const crudSchemas = reactive<CrudSchema[]>([
         },
         options: [
           {
-            label: '重要',
-            value: 3
+            label: '启动',
+            value: true
           },
           {
-            label: '良好',
-            value: 2
-          },
-          {
-            label: '一般',
-            value: 1
+            label: '停止',
+            value: false
           }
         ]
       }
-    }
-  },
-  {
-    field: 'pageviews',
-    label: t('tableDemo.pageviews'),
-    form: {
-      component: 'InputNumber',
-      value: 0
-    }
-  },
-  {
-    field: 'content',
-    label: t('exampleDemo.content'),
-    table: {
-      show: false
-    },
-    form: {
-      component: 'Editor',
-      colProps: {
-        span: 24
-      }
-    },
-    detail: {
-      span: 24
     }
   },
   {

@@ -27,9 +27,14 @@ service.interceptors.request.use(
     }
     // get参数编码
     if (config.method === 'get' && config.params) {
-      let url = config.url as string
-      url += '?'
+      // path variable
       const keys = Object.keys(config.params)
+      let url = config.url as string
+      for (const key of keys) {
+        url = url.replace(':' + key, config.params[key])
+      }
+
+      url += '?'
       for (const key of keys) {
         if (config.params[key] !== void 0 && config.params[key] !== null) {
           url += `${key}=${encodeURIComponent(config.params[key])}&`
