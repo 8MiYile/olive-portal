@@ -173,22 +173,14 @@ const crudSchemas = reactive<CrudSchema[]>([
     field: 'date_created',
     label: t('tableDemo.dateCreated'),
     form: {
-      component: 'DatePicker',
-      componentProps: {
-        type: 'datetime',
-        valueFormat: 'YYYY-MM-DD HH:mm:ss'
-      }
+      show: false
     }
   },
   {
     field: 'date_updated',
     label: t('tableDemo.dateUpdated'),
     form: {
-      component: 'DatePicker',
-      componentProps: {
-        type: 'datetime',
-        valueFormat: 'YYYY-MM-DD HH:mm:ss'
-      }
+      show: false
     }
   },
   {
@@ -256,7 +248,7 @@ const delData = async (row: TableData | null, multiple: boolean) => {
   const selections = await getSelections()
   delLoading.value = true
   await delList(
-    multiple ? selections.map((v) => v.id) : [tableObject.currentRow?.id as string],
+    multiple ? selections.map((v) => v.show_id) : [tableObject.currentRow?.show_id as string],
     multiple
   ).finally(() => {
     delLoading.value = false
