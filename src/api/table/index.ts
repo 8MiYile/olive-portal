@@ -1,5 +1,5 @@
 import request from '@/config/axios'
-import type { TableData, TableUpdateData } from './types'
+import type { ConfigData, TableData, TableUpdateData } from './types'
 
 export const getTableListApi = (params: any): Promise<IResponse> => {
   const pageIndex = params['pageIndex']
@@ -43,4 +43,20 @@ export const getTableDetApi = (id: string): Promise<IResponse<TableData>> => {
 export const delTableListApi = (ids: string[] | number[]): Promise<IResponse> => {
   const url = `/shows/${ids}`
   return request.delete({ url: url })
+}
+
+export const getCoreConfigApi = (): Promise<IResponse> => {
+  const url = `/configs/core_config`
+  return request.get({ url: url })
+}
+
+export const saveCoreConfigApi = (data: Partial<ConfigData>): Promise<IResponse> => {
+  const url = `/configs/core_config`
+  const resp = {
+    Value: JSON.stringify(data)
+  }
+  return request.put({
+    url: url,
+    data: resp
+  })
 }

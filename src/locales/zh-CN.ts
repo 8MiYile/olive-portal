@@ -40,7 +40,8 @@ export default {
     delOk: '确定',
     delCancel: '取消',
     delNoData: '请选择需要删除的数据',
-    delSuccess: '删除成功'
+    delSuccess: '删除成功',
+    updateSuccess: '更新成功'
   },
   error: {
     noPermission: `抱歉，您无权访问此页面。`,
@@ -130,7 +131,7 @@ export default {
     richText: '富文本',
     dialog: '弹窗',
     imageViewer: '图片预览',
-    descriptions: '描述',
+    descriptions: '全局配置',
     example: '综合示例',
     exampleDialog: '直播列表',
     examplePage: '综合示例 - 页面',
@@ -261,7 +262,7 @@ export default {
     resetValue: '重置值',
     set: '设置',
     subitem: '子项',
-    formValidation: '表单验证',
+    formValidation: '更新配置',
     verifyReset: '验证重置'
   },
   guideDemo: {
@@ -408,15 +409,20 @@ export default {
     imageViewer: '图片预览',
     imageViewerDes: '基于 ElementPlus 的 ImageViewer 组件二次封装'
   },
-  descriptionsDemo: {
-    descriptions: '描述',
-    descriptionsDes: '基于 ElementPlus 的 Descriptions 组件二次封装',
-    username: '用户名',
-    nickName: '昵称',
-    phone: '联系电话',
-    email: '邮箱',
-    addr: '地址',
-    form: '与 Form 组件组合'
+  configsDemo: {
+    PortalUsername: '用户名',
+    PortalPassword: '密码',
+    LogDir: '日志目录',
+    SaveDir: '保存目录',
+    OutTmpl: '文件名模板',
+    LogLevel: '日志等级(0~6), 越大日志输出越多',
+    SnapRestSeconds: '直播间状态查询间隔时间（秒）',
+    SplitRestSeconds: '文件是否满足切割条件检测间隔时间（秒）',
+    CommanderPoolSize: '直播间录播结束后执行命令的并发执行的个数',
+    ParserMonitorRestSeconds: '解析器状态检测间隔时间（秒）',
+    DouyinCookie: '抖音cookie',
+    KuaishouCookie: '快手cookie',
+    form: '全局配置项'
   },
   exampleDemo: {
     title: '标题',
