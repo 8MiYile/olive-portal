@@ -47,7 +47,7 @@ const crudSchemas = reactive<CrudSchema[]>([
     field: 'streamer_name',
     label: t('tableDemo.streamerName'),
     search: {
-      show: true
+      show: false
     },
     form: {
       colProps: {
@@ -300,7 +300,7 @@ const save = async () => {
 
 <template>
   <ContentWrap>
-    <Search :schema="allSchemas.searchSchema" @search="setSearchParams" @reset="setSearchParams" />
+    <!-- <Search :schema="allSchemas.searchSchema" @search="setSearchParams" @reset="setSearchParams" /> -->
 
     <div class="mb-10px">
       <ElButton type="primary" @click="AddAction">{{ t('exampleDemo.add') }}</ElButton>
