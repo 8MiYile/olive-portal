@@ -64,7 +64,8 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
         component: () => import('@/views/Example/Dialog/ExampleDialog.vue'),
         name: 'ExampleDialog',
         meta: {
-          title: t('router.exampleDialog')
+          title: t('router.exampleDialog'),
+          icon: 'ant-design:dashboard-filled'
         }
       }
     ]
@@ -80,7 +81,8 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
         component: () => import('@/views/Components/Descriptions.vue'),
         name: 'Descriptions',
         meta: {
-          title: t('router.descriptions')
+          title: t('router.descriptions'),
+          icon: 'clarity:document-solid'
         }
       }
     ]

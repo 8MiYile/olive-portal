@@ -15,7 +15,7 @@ import { useValidator } from '@/hooks/web/useValidator'
 
 const { required } = useValidator()
 
-const emit = defineEmits(['to-register'])
+// const emit = defineEmits(['to-register'])
 
 const appStore = useAppStore()
 
@@ -42,7 +42,7 @@ const schema = reactive<FormSchema[]>([
   {
     field: 'username',
     label: t('login.username'),
-    value: 'admin',
+    value: 'olive',
     component: 'Input',
     colProps: {
       span: 24
@@ -54,7 +54,7 @@ const schema = reactive<FormSchema[]>([
   {
     field: 'password',
     label: t('login.password'),
-    value: 'admin',
+    value: 'olive',
     component: 'InputPassword',
     colProps: {
       span: 24
@@ -77,21 +77,21 @@ const schema = reactive<FormSchema[]>([
     colProps: {
       span: 24
     }
-  },
-  {
-    field: 'other',
-    component: 'Divider',
-    label: t('login.otherLogin'),
-    componentProps: {
-      contentPosition: 'center'
-    }
-  },
-  {
-    field: 'otherIcon',
-    colProps: {
-      span: 24
-    }
   }
+  // {
+  //   field: 'other',
+  //   component: 'Divider',
+  //   label: t('login.otherLogin'),
+  //   componentProps: {
+  //     contentPosition: 'center'
+  //   }
+  // },
+  // {
+  //   field: 'otherIcon',
+  //   colProps: {
+  //     span: 24
+  //   }
+  // }
 ])
 
 const iconSize = 30
@@ -178,9 +178,9 @@ const getRole = async () => {
 }
 
 // 去注册页面
-const toRegister = () => {
-  emit('to-register')
-}
+// const toRegister = () => {
+//   emit('to-register')
+// }
 </script>
 
 <template>
@@ -210,11 +210,11 @@ const toRegister = () => {
           {{ t('login.login') }}
         </ElButton>
       </div>
-      <div class="w-[100%] mt-15px">
+      <!-- <div class="w-[100%] mt-15px">
         <ElButton class="w-[100%]" @click="toRegister">
           {{ t('login.register') }}
         </ElButton>
-      </div>
+      </div> -->
     </template>
 
     <template #otherIcon>

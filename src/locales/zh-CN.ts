@@ -86,7 +86,7 @@ export default {
   },
   login: {
     welcome: '欢迎使用本系统',
-    message: '开箱即用的中后台管理系统',
+    message: '下一代直播录制综合解决方案',
     username: '用户名',
     password: '密码',
     register: '注册',
