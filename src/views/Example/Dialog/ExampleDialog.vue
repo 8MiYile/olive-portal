@@ -13,6 +13,9 @@ import Write from './components/Write.vue'
 import Detail from './components/Detail.vue'
 import { CrudSchema, useCrudSchemas } from '@/hooks/web/useCrudSchemas'
 
+import { useValidator } from '@/hooks/web/useValidator'
+const { required } = useValidator()
+
 const { register, tableObject, methods } = useTable<TableData>({
   getListApi: getTableListApi,
   delListApi: delTableListApi,
@@ -227,6 +230,12 @@ const crudSchemas = reactive<CrudSchema[]>([
   }
 ])
 
+const rules = reactive({
+  platform: [required()],
+  room_id: [required()],
+  enable: [required()]
+})
+
 const { allSchemas } = useCrudSchemas(crudSchemas)
 
 const dialogVisible = ref(false)
@@ -334,6 +343,7 @@ const save = async () => {
       v-if="actionType !== 'detail'"
       ref="writeRef"
       :form-schema="allSchemas.formSchema"
+      :rules="rules"
       :current-row="tableObject.currentRow"
     />
 
