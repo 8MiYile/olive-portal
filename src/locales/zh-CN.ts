@@ -422,7 +422,10 @@ export default {
     ParserMonitorRestSeconds: '解析器状态检测间隔时间（秒）',
     DouyinCookie: '抖音cookie',
     KuaishouCookie: '快手cookie',
-    form: '全局配置项'
+    form: '全局配置项',
+    BiliupEnable: 'biliup运行状态',
+    CookieFilepath: 'biliup的cookie文件路径',
+    Threads: 'biliup最大并发数'
   },
   exampleDemo: {
     title: '标题',

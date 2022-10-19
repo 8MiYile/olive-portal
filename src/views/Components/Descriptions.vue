@@ -62,6 +62,16 @@ const schema = reactive<DescriptionsSchema[]>([
     field: 'KuaishouCookie',
     label: t('configsDemo.KuaishouCookie'),
     span: 24
+  },
+  {
+    field: 'CookieFilepath',
+    label: t('configsDemo.CookieFilepath'),
+    span: 24
+  },
+  {
+    field: 'Threads',
+    label: t('configsDemo.Threads'),
+    span: 24
   }
 ])
 
@@ -154,6 +164,16 @@ const formValidation = async () => {
       <template #KuaishouCookie>
         <ElFormItem prop="KuaishouCookie">
           <ElInput v-model="form.KuaishouCookie" />
+        </ElFormItem>
+      </template>
+      <template #CookieFilepath>
+        <ElFormItem prop="CookieFilepath">
+          <ElInput v-model="form.CookieFilepath" />
+        </ElFormItem>
+      </template>
+      <template #Threads>
+        <ElFormItem prop="Threads">
+          <ElInput v-model="form.Threads" />
         </ElFormItem>
       </template>
     </Descriptions>

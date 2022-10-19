@@ -36,4 +36,8 @@ export type ConfigData = {
   ParserMonitorRestSeconds?: number
   DouyinCookie?: string
   KuaishouCookie?: string
+
+  BiliupEnable?: boolean
+  CookieFilepath?: string
+  Threads?: number
 }

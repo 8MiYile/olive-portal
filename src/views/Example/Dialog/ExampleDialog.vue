@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ContentWrap } from '@/components/ContentWrap'
-import { Search } from '@/components/Search'
 import { Dialog } from '@/components/Dialog'
 import { useI18n } from '@/hooks/web/useI18n'
 import { ElButton, ElTag } from 'element-plus'
@@ -25,7 +24,7 @@ const { register, tableObject, methods } = useTable<TableData>({
   }
 })
 
-const { getList, setSearchParams } = methods
+const { getList } = methods
 
 getList()
 
