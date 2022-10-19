@@ -133,27 +133,27 @@ const formValidation = async () => {
       </template>
       <template #LogLevel>
         <ElFormItem prop="LogLevel">
-          <ElInput v-model="form.LogLevel" />
+          <ElInput v-model.number="form.LogLevel" type="number" />
         </ElFormItem>
       </template>
       <template #SnapRestSeconds>
         <ElFormItem prop="SnapRestSeconds">
-          <ElInput v-model="form.SnapRestSeconds" />
+          <ElInput v-model.number="form.SnapRestSeconds" type="number" />
         </ElFormItem>
       </template>
       <template #SplitRestSeconds>
         <ElFormItem prop="SplitRestSeconds">
-          <ElInput v-model="form.SplitRestSeconds" />
+          <ElInput v-model.number="form.SplitRestSeconds" type="number" />
         </ElFormItem>
       </template>
       <template #CommanderPoolSize>
         <ElFormItem prop="CommanderPoolSize">
-          <ElInput v-model="form.CommanderPoolSize" />
+          <ElInput v-model.number="form.CommanderPoolSize" type="number" />
         </ElFormItem>
       </template>
       <template #ParserMonitorRestSeconds>
         <ElFormItem prop="ParserMonitorRestSeconds">
-          <ElInput v-model="form.ParserMonitorRestSeconds" />
+          <ElInput v-model.number="form.ParserMonitorRestSeconds" type="number" />
         </ElFormItem>
       </template>
       <template #DouyinCookie>
@@ -173,7 +173,7 @@ const formValidation = async () => {
       </template>
       <template #Threads>
         <ElFormItem prop="Threads">
-          <ElInput v-model="form.Threads" />
+          <ElInput v-model.number="form.Threads" type="number" />
         </ElFormItem>
       </template>
     </Descriptions>
