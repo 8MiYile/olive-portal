@@ -4,13 +4,13 @@ import type { ConfigData, TableData, TableUpdateData } from './types'
 export const getTableListApi = (params: any): Promise<IResponse> => {
   const pageIndex = params['pageIndex']
   const pageSize = params['pageSize']
-  const url = `/shows/${pageIndex}/${pageSize}`
+  const url = `/v1/shows/${pageIndex}/${pageSize}`
   return request.get({ url: url })
 }
 
 export const saveTableApi = (data: Partial<TableData>): Promise<IResponse> => {
   if (data.show_id === undefined) {
-    const url = `/shows`
+    const url = `/v1/shows`
     return request.post({
       url: url,
       data: data
@@ -28,7 +28,7 @@ export const saveTableApi = (data: Partial<TableData>): Promise<IResponse> => {
     post_cmds: data.post_cmds!,
     split_rule: data.split_rule!
   }
-  const url = `/shows/${data.show_id}`
+  const url = `/v1/shows/${data.show_id}`
   return request.put({
     url: url,
     data: updateData
@@ -36,22 +36,22 @@ export const saveTableApi = (data: Partial<TableData>): Promise<IResponse> => {
 }
 
 export const getTableDetApi = (id: string): Promise<IResponse<TableData>> => {
-  const url = `/shows/${id}`
+  const url = `/v1/shows/${id}`
   return request.delete({ url: url })
 }
 
 export const delTableListApi = (ids: string[] | number[]): Promise<IResponse> => {
-  const url = `/shows/${ids}`
+  const url = `/v1/shows/${ids}`
   return request.delete({ url: url })
 }
 
 export const getCoreConfigApi = (): Promise<IResponse> => {
-  const url = `/configs/core_config`
+  const url = `/v1/configs/core_config`
   return request.get({ url: url })
 }
 
 export const saveCoreConfigApi = (data: Partial<ConfigData>): Promise<IResponse> => {
-  const url = `/configs/core_config`
+  const url = `/v1/configs/core_config`
   const resp = {
     Value: JSON.stringify(data)
   }
