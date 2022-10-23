@@ -425,7 +425,8 @@ export default {
     form: '全局配置项',
     BiliupEnable: 'biliup运行状态',
     CookieFilepath: 'biliup的cookie文件路径',
-    Threads: 'biliup最大并发数'
+    Threads: 'biliup最大并发数',
+    MaxBytesPerSecond: 'biliup每秒最多上传字节数'
   },
   exampleDemo: {
     title: '标题',

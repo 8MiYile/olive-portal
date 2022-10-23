@@ -40,4 +40,5 @@ export type ConfigData = {
   BiliupEnable?: boolean
   CookieFilepath?: string
   Threads?: number
+  MaxBytesPerSecond?: number
 }

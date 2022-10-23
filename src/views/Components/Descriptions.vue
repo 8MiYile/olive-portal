@@ -72,6 +72,11 @@ const schema = reactive<DescriptionsSchema[]>([
     field: 'Threads',
     label: t('configsDemo.Threads'),
     span: 24
+  },
+  {
+    field: 'MaxBytesPerSecond',
+    label: t('configsDemo.MaxBytesPerSecond'),
+    span: 24
   }
 ])
 
@@ -174,6 +179,11 @@ const formValidation = async () => {
       <template #Threads>
         <ElFormItem prop="Threads">
           <ElInput v-model.number="form.Threads" type="number" />
+        </ElFormItem>
+      </template>
+      <template #MaxBytesPerSecond>
+        <ElFormItem prop="MaxBytesPerSecond">
+          <ElInput v-model.number="form.MaxBytesPerSecond" type="number" />
         </ElFormItem>
       </template>
     </Descriptions>
