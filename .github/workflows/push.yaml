@@ -18,8 +18,9 @@ jobs:
           cache: pnpm
       - name: Install package and build
         run: |
-          pnpm install --no-frozen-lockfile
+          pnpm install
           pnpm build:pro
+          pnpm prepare
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v2
         with:
